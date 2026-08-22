@@ -7,10 +7,15 @@ def calculate_hours_saved(minutes_saved_per_week):
     return minutes_saved_per_week / 60
 
 # Variables
-current_minutes = float(input("Current minutes per transaction: "))
-new_minutes = float(input("New minutes per transaction: "))
-transactions_per_week = float(input("Transactions per week: "))
-hourly_cost = float(input("Employee hourly cost: "))
+# Variables
+try:
+    current_minutes = float(input("Current minutes per transaction: "))
+    new_minutes = float(input("New minutes per transaction: "))
+    transactions_per_week = float(input("Transactions per week: "))
+    hourly_cost = float(input("Employee hourly cost: "))
+except ValueError:
+    print("\nInvalid input. Please enter numbers only.")
+    raise SystemExit
 
 #Calculations
 if new_minutes >= current_minutes:
